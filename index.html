@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio de Estilo de Listas en CSS - COMP2120</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #006633;
+            --primary-light: #e6f2ed;
+            --accent: #d4af37;
+            --text-main: #1f2937;
+            --text-muted: #4b5563;
+            --bg-gradient: linear-gradient(135deg, #f3f7f5 0%, #e1eec3 100%);
+            --card-bg: #ffffff;
+            --shadow-md: 0 10px 30px rgba(0, 102, 51, 0.08);
+            --radius-lg: 16px;
+            --radius-md: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        header {
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .student-info {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .list-card {
+            background: #fafafa;
+            border: 1px solid #eaeaea;
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .list-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .lista-cuadrada {
+            list-style: square inside;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .lista-romana {
+            list-style-type: lower-roman;
+            list-style-position: outside;
+            padding-left: 20px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .lista-imagen {
+            list-style-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23006633"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>');
+            list-style-position: inside;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .reflection-card {
+            background: linear-gradient(135deg, #f9fdfa 0%, #eaf4ed 100%);
+            border-left: 4px solid var(--accent);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            margin-top: 30px;
+        }
+
+        .reflection-card h2 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .reflection-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <span class="badge">COMP2120 • Web Development</span>
+            <h1>Laboratorio de Estilos de Listas en CSS</h1>
+            <p class="student-info">Estudiante: Joshua Vélez Gómez</p>
+        </header>
+
+        <div class="list-card">
+            <div class="section-title">1. Lista Desordenada (Cuadrada & Inside)</div>
+            <ul class="lista-cuadrada">
+                <li>HTML5 para la estructura básica del documento</li>
+                <li>CSS3 para el diseño y hojas de estilo</li>
+                <li>JavaScript para la interactividad y dinámicas</li>
+            </ul>
+        </div>
+
+        <div class="list-card">
+            <div class="section-title">2. Lista Ordenada (Números Romanos & Outside)</div>
+            <ol class="lista-romana">
+                <li>Planificación y bocetado del sitio web</li>
+                <li>Desarrollo y maquetación de código limpio</li>
+                <li>Publicación y despliegue en repositorio GitHub</li>
+            </ol>
+        </div>
+
+        <div class="list-card">
+            <div class="section-title">3. Lista con Viñeta Personalizada (Imagen)</div>
+            <ul class="lista-imagen">
+                <li>Primer objetivo alcanzado con éxito</li>
+                <li>Segundo objetivo en proceso de evaluación</li>
+                <li>Tercer objetivo programado para completarse</li>
+            </ul>
+        </div>
+
+        <div class="reflection-card">
+            <h2>4. Reflexión sobre las Propiedades de CSS para Listas</h2>
+            <p>
+                El uso de las propiedades de CSS para listas permite estructurar la información de manera visualmente organizada, clara y fácil de escanear para el usuario. Al personalizar el tipo de viñeta, su posición y su estilo visual, se mejora significativamente la jerarquía temática del contenido y la estética del sitio web, adaptándola al diseño general de la marca. Además, la capacidad de ajustar estas propiedades contribuye a una mejor usabilidad y accesibilidad en la lectura de datos complejos o instrucciones paso a paso.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
